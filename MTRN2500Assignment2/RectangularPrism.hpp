@@ -1,15 +1,15 @@
 
 #include "Shape.hpp"
 
-//Absract Rectangle class derived from Shape
+//Absract RectangularPrism class derived from Shape
 
-class RectangularPrism : public Shape 
+class RectangularPrism : public Shape
 {
 public:
-	RectangularPrism(double length, double width, double depth, float red, float green, float blue);			//constructor
-
-	//dimensions of rectangular prism
-	double x_len; 
+	RectangularPrism(double length, double width, double depth, float red, float green, float blue, double x, double y, double z);			//constructor
+	RectangularPrism(double length, double width, double depth, float red, float green, float blue, double x, double y, double z, double rotation);
+																												//dimensions of rectangular prism
+	double x_len;
 	double y_len;
 	double z_len;
 
