@@ -67,3 +67,94 @@ void Cylinder::draw() {
 	glPopMatrix();
 }
 
+void Cylinder::drawWheel() {
+
+	GLUquadricObj * disk1 = gluNewQuadric();			//cap of cylinder
+	GLUquadricObj * disk2 = gluNewQuadric();			//base of cylinder
+	GLUquadricObj * cylinder = gluNewQuadric();			//body of cylinder
+
+	glPushMatrix();
+	setColorInGL();
+	positionInGL();
+
+	//moved axis so that cylinder is level with y = 0 and is the middle of the x and z axis
+	glTranslated(0, r, -h / 2.0);
+
+	//cap of cylinder
+	gluDisk(disk1, 0, r, 25, 1);
+
+	//body of cylinder
+	gluCylinder(cylinder, r, r, h, 20, 20);
+
+		//horizontal spoke
+		glLineWidth(1);
+		glColor3f(0, 0, 0); //black spokes
+		glBegin(GL_LINES);
+		glVertex3f(r, 0, 0);
+		glVertex3f(-r, 0, 0);
+		glEnd();
+
+		//vertical spoke
+		glLineWidth(1);
+		glColor3f(0, 0, 0);//black spokes
+		glBegin(GL_LINES);
+		glVertex3f(0, r, 0);
+		glVertex3f(0, -r, 0);
+		glEnd();
+
+		//diagonal spoke 1
+		glLineWidth(1);
+		glColor3f(0, 0, 0); //black spokes
+		glBegin(GL_LINES);
+		glVertex3f(r, -r, 0);
+		glVertex3f(-r, r, 0);
+		glEnd();
+
+		//diagonal spoke 2
+		glLineWidth(1);
+		glColor3f(0, 0, 0); //black spokes
+		glBegin(GL_LINES);
+		glVertex3f(r, r, 0);
+		glVertex3f(-r, -r, 0);
+		glEnd();
+
+
+	//base of cylinder
+	glTranslated(0, 0, h);
+	gluDisk(disk2, 0, r, 25, 1);
+
+		//horizontal spoke
+		glLineWidth(1);
+		glColor3f(0, 0, 0); //black spokes
+		glBegin(GL_LINES);
+		glVertex3f(r, 0, 0);
+		glVertex3f(-r, 0, 0);
+		glEnd();
+
+		//vertical spoke
+		glLineWidth(1);
+		glColor3f(0, 0, 0);//black spokes
+		glBegin(GL_LINES);
+		glVertex3f(0, r, 0);
+		glVertex3f(0, -r, 0);
+		glEnd();
+
+		//diagonal spoke 1
+		glLineWidth(1);
+		glColor3f(0, 0, 0); //black spokes
+		glBegin(GL_LINES);
+		glVertex3f(r, -r, 0);
+		glVertex3f(-r, r, 0);
+		glEnd();
+
+		//diagonal spoke 2
+		glLineWidth(1);
+		glColor3f(0, 0, 0); //black spokes
+		glBegin(GL_LINES);
+		glVertex3f(r, r, 0);
+		glVertex3f(-r, -r, 0);
+		glEnd();
+
+	glPopMatrix();
+}
+

@@ -14,4 +14,5 @@ public:
 
 	//function to draw the cylinder
 	void draw();
+	void drawWheel();
 };

@@ -156,10 +156,10 @@ void drawGoals()
 
 void testDraw() 
 {
-	RectangularPrism rectPrism1 (10.0,6.0,8.0,1,1,0);
+	/*RectangularPrism rectPrism1 (10.0,6.0,8.0,1,1,0);
 	rectPrism1.draw();
 	Cylinder cylinder1(5.0, 8.0, 0,0,1);
-	cylinder1.draw();
+	cylinder1.draw();*/
 };
 
 void display() {
